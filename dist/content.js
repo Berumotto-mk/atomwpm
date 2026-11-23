@@ -138,6 +138,43 @@ window.ATOMWPM = {
         }
     }
 ],
+  realWorldVideos: [
+    {
+        "title": "Pick and place",
+        "description": "Pick up the cup and place it at the target position.",
+        "protocol": "",
+        "src": "assets/videos/real-world/01_pick_and_place_cup.mp4",
+        "poster": "assets/videos/real-world/01_pick_and_place_cup.jpg"
+    },
+    {
+        "title": "Pour with the cup",
+        "description": "Move the cup toward the bowl, pour, and return the cup to the table.",
+        "protocol": "",
+        "src": "assets/videos/real-world/02_pour_with_cup.mp4",
+        "poster": "assets/videos/real-world/02_pour_with_cup.jpg"
+    },
+    {
+        "title": "Wipe the table",
+        "description": "Wipe the table with the blue sponge.",
+        "protocol": "",
+        "src": "assets/videos/real-world/03_wipe_table.mp4",
+        "poster": "assets/videos/real-world/03_wipe_table.jpg"
+    },
+    {
+        "title": "Fold the paper bag",
+        "description": "Fold the brown paper bag on the table.",
+        "protocol": "",
+        "src": "assets/videos/real-world/04_fold_paper_bag.mp4",
+        "poster": "assets/videos/real-world/04_fold_paper_bag.jpg"
+    },
+    {
+        "title": "Pull out the drawer",
+        "description": "Pull out the appliance drawer by its handle.",
+        "protocol": "",
+        "src": "assets/videos/real-world/05_pull_out_drawer.mp4",
+        "poster": "assets/videos/real-world/05_pull_out_drawer.jpg"
+    }
+],
   /* Draft citation: replace with the final public paper metadata at release. */
   bibtex: `@misc{atomwpm,
   title = {AtomWPM: Fast 4D Prediction from Pretrained Video Representations},

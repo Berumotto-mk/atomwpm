@@ -35,6 +35,7 @@
     const copy=make('div','media-copy');copy.append(make('h3','',item.title),make('p','',item.description));
     if(item.protocol)copy.append(make('span','media-tag',item.protocol));card.append(copy);document.querySelector(target).append(card);
   });
+  renderMedia(config.realWorldVideos || [],'#real-world-videos');
   config.predictionVideos.forEach(prediction => {
     const execution=config.executionVideos.find(item=>item.title===prediction.title);
     if(!execution) return;
