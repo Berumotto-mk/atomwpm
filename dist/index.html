@@ -6,8 +6,8 @@
   <meta name="description" content="AtomWPM: Fast 4D Prediction from Pretrained Video Representations. Forecasting metric 3D point trajectories for robot manipulation.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20261123-human-transfer">
-  <script defer src="content.js?v=20261123-human-transfer"></script><script defer src="app.js?v=20261123-human-transfer"></script>
+  <link rel="stylesheet" href="style.css?v=20261123-paired-rollouts">
+  <script defer src="content.js?v=20261123-paired-rollouts"></script><script defer src="app.js?v=20261123-paired-rollouts"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -42,13 +42,13 @@
 <section class="section soft" id="prediction"><div class="wrap">
   <div class="section-heading"><p class="eyebrow">4D prediction</p><h2>One representation.<br>Diverse object motion.</h2><p>Explore real-world manipulation and simulation results, from rigid motion to articulated objects and deformable paper bags.</p></div>
   <div class="tabs" role="tablist" aria-label="Prediction domain"><button role="tab" id="tab-real" aria-controls="panel-real" aria-selected="true" data-panel="real">Real world</button><button role="tab" id="tab-simulation" aria-controls="panel-simulation" aria-selected="false" tabindex="-1" data-panel="simulation">Simulation</button></div>
-  <div id="panel-real" role="tabpanel" aria-labelledby="tab-real"><div class="subsection-heading"><h3>Predicted trajectories</h3><p>Four real-world tasks, with point trajectories predicted by AtomWPM.</p></div><div class="media-grid" id="prediction-videos"></div><div class="subsection-heading"><h3>Additional qualitative results</h3></div><figure class="results-figure"><a href="assets/real-predictions-hd.webp" target="_blank" rel="noopener noreferrer" title="Open full-resolution figure"><img src="assets/real-predictions-hd.webp" loading="lazy" alt="Six real-world tasks showing RGB observations, query points, ground-truth 3D trajectories and predicted 3D trajectories."></a><figcaption>Pick and place · Fold bag · Wipe table · Return sponge · Pour · Pull drawer</figcaption></figure><p class="protocol">Selected qualitative examples from the paper. Endpoint-conditioned examples receive target XYZ; these should be distinguished from forecasts without endpoint input. The drawer example has incomplete observed ground truth.</p></div>
+  <div id="panel-real" role="tabpanel" aria-labelledby="tab-real"><div class="subsection-heading"><h3>Additional qualitative results</h3></div><figure class="results-figure"><a href="assets/real-predictions-hd.webp" target="_blank" rel="noopener noreferrer" title="Open full-resolution figure"><img src="assets/real-predictions-hd.webp" loading="lazy" alt="Six real-world tasks showing RGB observations, query points, ground-truth 3D trajectories and predicted 3D trajectories."></a><figcaption>Pick and place · Fold bag · Wipe table · Return sponge · Pour · Pull drawer</figcaption></figure><p class="protocol">Selected qualitative examples from the paper. Endpoint-conditioned examples receive target XYZ; these should be distinguished from forecasts without endpoint input. The drawer example has incomplete observed ground truth.</p></div>
   <div id="panel-simulation" role="tabpanel" aria-labelledby="tab-simulation" hidden><figure class="results-figure"><a href="assets/simulation-hd.webp" target="_blank" rel="noopener noreferrer" title="Open full-resolution figure"><img src="assets/simulation-hd.webp" loading="lazy" alt="LIBERO and RoboTwin 2.0 qualitative comparisons of ground-truth and predicted trajectories."></a><figcaption>LIBERO and RoboTwin 2.0 · selected qualitative results</figcaption></figure><p class="protocol">Simulation examples concatenate predicted trajectory chunks. Endpoint settings and rollout details will be listed separately for each video.</p></div>
 
 </div></section>
 <section class="section wrap" id="execution">
   <div class="section-heading"><p class="eyebrow">Robot execution</p><h2>From predicted points<br>to robot actions.</h2><p>In these four rollouts, AtomWPM predicts point trajectories that are passed to the action decoder to guide physical robot execution.</p></div>
-  <div class="media-grid" id="execution-videos"></div>
+  <div id="execution-videos"></div>
   <div class="subsection-heading"><h3>Selected rollout snapshots</h3></div>
   <figure class="results-figure"><a href="assets/robot-rollouts-hd.webp" target="_blank" rel="noopener noreferrer" title="Open full-resolution figure"><img src="assets/robot-rollouts-hd.webp" loading="lazy" alt="Real-robot results showing initial state, predicted trajectory and final state for pick and place, table wiping, drawer opening and paper-bag folding."></a><figcaption>Initial state · Predicted trajectory · Final state</figcaption></figure>
   

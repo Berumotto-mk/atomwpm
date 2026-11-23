@@ -35,7 +35,25 @@
     const copy=make('div','media-copy');copy.append(make('h3','',item.title),make('p','',item.description));
     if(item.protocol)copy.append(make('span','media-tag',item.protocol));card.append(copy);document.querySelector(target).append(card);
   });
-  renderMedia(config.predictionVideos,'#prediction-videos');renderMedia(config.executionVideos,'#execution-videos');
+  config.predictionVideos.forEach(prediction => {
+    const execution=config.executionVideos.find(item=>item.title===prediction.title);
+    if(!execution) return;
+    const group=make('article','human-task');
+    group.append(make('h3','human-task-title',prediction.title));
+    const grid=make('div','media-grid');
+    for(const [item,label,description] of [
+      [prediction,'Predicted trajectories','Point trajectories predicted by AtomWPM.'],
+      [execution,'Robot execution','Action decoder conditioned on the AtomWPM-predicted trajectories.']
+    ]) {
+      const card=make('div','media-card');
+      const copy=make('div','media-copy');
+      copy.append(make('h3','',label),make('p','',description));
+      card.append(copy,videoNode({...item,title:prediction.title+' — '+label}));
+      grid.append(card);
+    }
+    group.append(grid);
+    document.querySelector('#execution-videos').append(group);
+  });
   (config.humanTransferVideos || []).forEach(task => {
     const group=make('article','human-task');
     group.append(make('h3','human-task-title',task.title));
