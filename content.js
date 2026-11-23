@@ -228,8 +228,7 @@ window.ATOMWPM = {
   /* Draft citation: replace with the final public paper metadata at release. */
   bibtex: `@misc{atomwpm,
   title = {AtomWPM: Fast 4D Prediction from Pretrained Video Representations},
-  author = {Ma, Kai and chong bocheng and Liruoyang and Zeng, Xianzhu
-            and Li, Haozhe and Li, Tao and Li, Shiqian and Wang, Dong},
+  author = {Anonymous Authors},
   note = {Manuscript; publication details forthcoming}
 }`
 };
