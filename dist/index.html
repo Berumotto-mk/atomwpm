@@ -6,9 +6,9 @@
   <meta name="description" content="AtomWPM: Fast 4D Prediction from Pretrained Video Representations. Forecasting metric 3D point trajectories for robot manipulation.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20261123-motion-demo">
-  <script type="module" src="animation.js?v=20261123-motion-demo"></script>
-  <script defer src="content.js?v=20261123-motion-demo"></script><script defer src="app.js?v=20261123-motion-demo"></script>
+  <link rel="stylesheet" href="style.css?v=20261123-generalization">
+  <script type="module" src="animation.js?v=20261123-generalization"></script>
+  <script defer src="content.js?v=20261123-generalization"></script><script defer src="app.js?v=20261123-generalization"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -27,12 +27,14 @@
   <div class="resource-buttons" id="hero-resources"></div>
   <p class="hero-summary">Video-learned motion priors. Metric point trajectories.<br>No future-video generation.</p>
 <div id="motion-demo" class="motion-demo" aria-busy="true" role="group" aria-label="Interactive AtomWPM demonstration">
-  <div class="demo-heading"><span class="demo-kicker">MOTION AS AN INTERFACE</span><span class="demo-phase-number">01 / 03</span></div>
+  <div class="demo-heading"><span class="demo-kicker">ACROSS TASKS, SCENES &amp; EMBODIMENTS</span><span class="demo-phase-number">01 / 03</span></div>
+  <div class="demo-cases" aria-label="Illustrative task and embodiment"><button disabled class="demo-case" type="button" aria-pressed="true">Cup · Pick &amp; place</button><button disabled class="demo-case" type="button" aria-pressed="false">Sponge · Wipe</button><button disabled class="demo-case" type="button" aria-pressed="false">Bottle · Pour</button></div>
+  <div class="demo-context"><span class="demo-case-task">Pick &amp; place</span><span class="demo-case-scene">Workbench</span><span class="demo-case-body">Articulated arm</span></div>
   <div class="demo-stage"><canvas tabindex="0" role="img" aria-label="A 3D robot observes eight query points on a cup, forecasts their trajectories, then moves the cup to the blue target. Drag or use arrow keys to rotate the view."></canvas><span class="demo-loading">Loading interactive scene…</span><p class="demo-fallback" hidden>The interactive 3D view is unavailable in this browser. Explore the overview and recorded rollouts below.</p><span class="demo-view-hint">Drag to rotate · arrow keys supported</span></div>
   <p class="demo-instruction">“Place the cup on the target.”</p>
   <div class="demo-story"><div class="demo-steps" aria-label="Demonstration stages"><button class="demo-step active" disabled type="button" aria-pressed="true"><span>01</span>Observe<small>RGB + language + queries</small></button><span class="demo-connector" aria-hidden="true">→</span><button class="demo-step" disabled type="button" aria-pressed="false"><span>02</span>Predict<small>Future 3D point motion</small></button><span class="demo-connector" aria-hidden="true">→</span><button class="demo-step" disabled type="button" aria-pressed="false"><span>03</span>Act<small>Trajectory-conditioned actions</small></button></div><div class="demo-narration"><h3 class="demo-phase-title">Observe the object</h3><p class="demo-explanation">A short RGB history, language, and query XYZ define the input.</p><span class="demo-badge">RGB history + language + query XYZ</span></div></div>
   <div class="demo-controls"><div class="demo-buttons"><button class="demo-pause" disabled type="button" aria-label="Pause demo">Pause</button><button class="demo-replay" disabled type="button">Replay</button><button class="demo-reset" disabled type="button">Reset view</button></div><input class="demo-scrub" aria-label="Demo progress" disabled type="range" min="0" max="1000" step="1" value="0"><span class="demo-playback-status">Playing</span></div>
-  <p class="demo-disclosure">Interactive illustration of the endpoint-conditioned pipeline. Motion is schematic; measured model predictions and robot rollouts are shown below.</p>
+  <p class="demo-disclosure">Illustrative variations across tasks, scenes, and embodiments; each round changes the object, setting, and robot. These schematic motions illustrate the interface, not measured cross-embodiment performance.</p>
 </div>
   <figure class="hero-figure"><div id="hero-media"><a href="assets/overview.svg" target="_blank" rel="noopener noreferrer" title="Open full-resolution overview"><img src="assets/overview.svg" width="1600" height="820" alt="AtomWPM overview: RGB history, language and query XYZ condition cached video features and trajectory denoising; predicted metric 3D tracks guide an action expert. Joint video–trajectory training transfers motion priors."></a></div><figcaption>From observations to metric trajectories to robot actions.<span class="figure-note">Video–trajectory learning during training. Cached trajectory forecasting at inference.</span></figcaption></figure>
 </section>
