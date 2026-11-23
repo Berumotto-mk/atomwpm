@@ -21,3 +21,7 @@
 @media(max-width:600px){.page-toc summary{padding-inline:18px}.page-toc summary::after{right:20px}.page-toc nav{padding-inline:14px}.page-toc ol{gap:3px 8px}.page-toc a{font-size:13px;grid-template-columns:20px 1fr;gap:4px}.toc-number{font-size:11px}.page-toc summary{gap:6px}.toc-current{font-size:12px}}
 
 .data-details>article{min-width:0}
+
+/* Let section backgrounds continue underneath the contents rail. */
+@media(min-width:1100px){.page-toc{background:transparent;border:0}.page-toc a:hover,.page-toc a[aria-current=location]{background:transparent}main .section.soft{position:relative;isolation:isolate}main .section.soft::before{content:'';position:absolute;inset:0 0 0 calc(-1 * var(--toc-width));background:var(--section-background,var(--soft));z-index:-1;pointer-events:none}#data{--section-background:#f4f7fc}#prediction{--section-background:#fff}}
+@media(max-width:1099px){.page-toc{background:#fff;border:0}}
