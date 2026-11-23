@@ -67,6 +67,73 @@ window.ATOMWPM = {
         "poster": "assets/videos/open-drawer-execution.jpg"
     }
 ],
+  humanTransferVideos: [
+    {
+        "title": "Pick and place",
+        "reference": {
+            "title": "Human demonstration",
+            "src": "assets/videos/human-transfer/pick-place-reference.mp4",
+            "poster": "assets/videos/human-transfer/pick-place-reference.jpg"
+        },
+        "execution": {
+            "title": "Robot execution",
+            "src": "assets/videos/human-transfer/pick-place-execution.mp4",
+            "poster": "assets/videos/human-transfer/pick-place-execution.jpg"
+        }
+    },
+    {
+        "title": "Fold the paper bag",
+        "reference": {
+            "title": "Human demonstration",
+            "src": "assets/videos/human-transfer/fold-bag-reference.mp4",
+            "poster": "assets/videos/human-transfer/fold-bag-reference.jpg"
+        },
+        "execution": {
+            "title": "Robot execution",
+            "src": "assets/videos/human-transfer/fold-bag-execution.mp4",
+            "poster": "assets/videos/human-transfer/fold-bag-execution.jpg"
+        }
+    },
+    {
+        "title": "Wipe the table",
+        "reference": {
+            "title": "Human demonstration",
+            "src": "assets/videos/human-transfer/wipe-table-reference.mp4",
+            "poster": "assets/videos/human-transfer/wipe-table-reference.jpg"
+        },
+        "execution": {
+            "title": "Robot execution",
+            "src": "assets/videos/human-transfer/wipe-table-execution.mp4",
+            "poster": "assets/videos/human-transfer/wipe-table-execution.jpg"
+        }
+    },
+    {
+        "title": "Open the drawer",
+        "reference": {
+            "title": "Human demonstration",
+            "src": "assets/videos/human-transfer/open-drawer-reference.mp4",
+            "poster": "assets/videos/human-transfer/open-drawer-reference.jpg"
+        },
+        "execution": {
+            "title": "Robot execution",
+            "src": "assets/videos/human-transfer/open-drawer-execution.mp4",
+            "poster": "assets/videos/human-transfer/open-drawer-execution.jpg"
+        }
+    },
+    {
+        "title": "Pour",
+        "reference": {
+            "title": "Human demonstration",
+            "src": "assets/videos/human-transfer/pour-reference.mp4",
+            "poster": "assets/videos/human-transfer/pour-reference.jpg"
+        },
+        "execution": {
+            "title": "Robot execution",
+            "src": "assets/videos/human-transfer/pour-execution.mp4",
+            "poster": "assets/videos/human-transfer/pour-execution.jpg"
+        }
+    }
+],
   /* Draft citation: replace with the final public paper metadata at release. */
   bibtex: `@misc{atomwpm,
   title = {AtomWPM: Fast 4D Prediction from Pretrained Video Representations},

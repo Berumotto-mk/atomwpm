@@ -6,14 +6,14 @@
   <meta name="description" content="AtomWPM: Fast 4D Prediction from Pretrained Video Representations. Forecasting metric 3D point trajectories for robot manipulation.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20261123-rollouts">
-  <script defer src="content.js?v=20261123-rollouts"></script><script defer src="app.js?v=20261123-rollouts"></script>
+  <link rel="stylesheet" href="style.css?v=20261123-human-transfer">
+  <script defer src="content.js?v=20261123-human-transfer"></script><script defer src="app.js?v=20261123-human-transfer"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar"><nav class="nav wrap" aria-label="Main navigation">
   <a class="wordmark" href="#">Atom<span>WPM</span></a>
-  <div class="navlinks"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#prediction">4D prediction</a><a href="#execution">Robot execution</a><a href="#results">Results</a><a href="#resources">Resources</a></div>
+  <div class="navlinks"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#prediction">4D prediction</a><a href="#execution">Robot execution</a><a href="#human-to-robot">Human-to-robot</a><a href="#results">Results</a><a href="#resources">Resources</a></div>
 </nav></header>
 <main id="main">
 <section class="hero wrap">
@@ -52,6 +52,10 @@
   <div class="subsection-heading"><h3>Selected rollout snapshots</h3></div>
   <figure class="results-figure"><a href="assets/robot-rollouts-hd.webp" target="_blank" rel="noopener noreferrer" title="Open full-resolution figure"><img src="assets/robot-rollouts-hd.webp" loading="lazy" alt="Real-robot results showing initial state, predicted trajectory and final state for pick and place, table wiping, drawer opening and paper-bag folding."></a><figcaption>Initial state · Predicted trajectory · Final state</figcaption></figure>
   
+</section>
+<section class="section wrap" id="human-to-robot">
+  <div class="section-heading"><p class="eyebrow">Human demonstrations</p><h2>Human-to-robot transfer</h2><p>Trajectories extracted from human demonstrations are provided to the action decoder to produce robot actions. Each task pairs the human demonstration with the corresponding robot execution.</p></div>
+  <div id="human-transfer-videos"></div>
 </section>
 <section class="section soft" id="results"><div class="wrap">
   <div class="section-heading"><p class="eyebrow">Experimental results</p><h2>Fast forecasting.<br>A useful interface for control.</h2><p>Selected results reported in the current paper. Forecasting comparisons use matched endpoint inputs; robot-control numbers describe the complete action-expert system.</p></div>

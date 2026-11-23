@@ -36,6 +36,21 @@
     if(item.protocol)copy.append(make('span','media-tag',item.protocol));card.append(copy);document.querySelector(target).append(card);
   });
   renderMedia(config.predictionVideos,'#prediction-videos');renderMedia(config.executionVideos,'#execution-videos');
+  (config.humanTransferVideos || []).forEach(task => {
+    const group=make('article','human-task');
+    group.append(make('h3','human-task-title',task.title));
+    const grid=make('div','media-grid');
+    for(const [key,label] of [['reference','Human demonstration'],['execution','Robot execution']]) {
+      const item=task[key];
+      const card=make('div','media-card');
+      const copy=make('div','media-copy');
+      copy.append(make('h3','',label),make('p','',key==='reference'?'Human demonstration used to extract the conditioning trajectories.':'Action decoder conditioned on trajectories from the human demonstration.'));
+      card.append(copy,videoNode({...item,title:task.title+' — '+label}));
+      grid.append(card);
+    }
+    group.append(grid);
+    document.querySelector('#human-transfer-videos').append(group);
+  });
   const tabs=[...document.querySelectorAll('[role=tab]')];
   const selectTab = tab => {tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!selected;});};
   tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowLeft')next=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();selectTab(tabs[next]);tabs[next].focus();});});
