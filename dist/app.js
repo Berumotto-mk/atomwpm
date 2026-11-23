@@ -57,6 +57,30 @@
   const tabs=[...document.querySelectorAll('[role=tab]')];
   const selectTab = tab => {tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!selected;});};
   tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight')next=(i+1)%tabs.length;else if(e.key==='ArrowLeft')next=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=tabs.length-1;else return;e.preventDefault();selectTab(tabs[next]);tabs[next].focus();});});
+  const toc=document.querySelector('.page-toc');
+  const tocDetails=toc.querySelector('details');
+  const tocLinks=[...toc.querySelectorAll('a')];
+  const anchors=tocLinks.map(a=>document.getElementById(a.hash.slice(1)));
+  const desktopTOC=matchMedia('(min-width:1100px)');
+  const tocLayout=()=>{tocDetails.open=desktopTOC.matches;toc.querySelector('summary').tabIndex=desktopTOC.matches?-1:0;};
+  tocLayout();desktopTOC.addEventListener('change',tocLayout);
+  let queued=false,selected='';
+  const updateTOC=()=>{
+    queued=false;
+    const headerHeight=document.querySelector('.topbar').getBoundingClientRect().height;
+    const offset=headerHeight+(desktopTOC.matches?70:110);
+    let index=0;
+    anchors.forEach((el,i)=>{if(el.getBoundingClientRect().top<=offset)index=i;});
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-3)index=anchors.length-1;
+    const id=anchors[index].id;
+    if(id!==selected){selected=id;tocLinks.forEach((a,i)=>{if(i===index)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});toc.querySelector('.toc-current').textContent=tocLinks[index].lastElementChild.textContent;}
+  };
+  const queueTOC=()=>{if(!queued){queued=true;requestAnimationFrame(updateTOC);}};
+  addEventListener('scroll',queueTOC,{passive:true});addEventListener('resize',queueTOC,{passive:true});addEventListener('load',queueTOC);addEventListener('hashchange',queueTOC);
+  tocLinks.forEach(a=>a.addEventListener('click',()=>{if(!desktopTOC.matches)tocDetails.open=false;}));
+  new ResizeObserver(entries=>{document.documentElement.style.setProperty('--topbar-height',entries[0].target.getBoundingClientRect().height+'px');queueTOC();}).observe(document.querySelector('.topbar'));
+  new ResizeObserver(queueTOC).observe(document.querySelector('main'));
+  updateTOC();
   document.querySelector('#bibtex').textContent=config.bibtex;
   document.querySelector('#copy-citation').addEventListener('click',async()=>{
     try{await navigator.clipboard.writeText(config.bibtex);document.querySelector('#copy-status').textContent='Citation copied.';}
