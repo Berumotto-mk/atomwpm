@@ -5,3 +5,5 @@
 .pair-controls{display:flex;gap:14px;align-items:center;margin:0 0 18px}.play-pair{border:1px solid var(--line);border-radius:5px;padding:7px 15px;background:white;color:var(--blue);font-size:14px}.pair-status{color:var(--muted);font-size:14px}.media-copy .media-playback-note{font-size:13px;color:var(--blue);margin-top:5px}
 
 #execution-videos .media-copy{min-height:130px}
+
+#simulation-videos{grid-template-columns:1fr}#simulation-videos .media-card video{aspect-ratio:1440/760}

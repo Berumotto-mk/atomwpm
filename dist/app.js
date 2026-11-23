@@ -21,6 +21,7 @@
   const videoNode = item => {
     const v=make('video');v.src=safeURL(item.src);v.controls=true;v.playsInline=true;v.loop=true;v.muted=true;v.preload='metadata';v.setAttribute('aria-label',item.title);
     if(safeURL(item.poster))v.poster=item.poster;
+    if(item.aspectRatio) v.style.aspectRatio=item.aspectRatio;
     v.append(make('p','', 'Your browser does not support video playback.'));
     return v;
   };
@@ -36,6 +37,7 @@
     if(item.protocol)copy.append(make('span','media-tag',item.protocol));card.append(copy);document.querySelector(target).append(card);
   });
   renderMedia(config.realWorldVideos || [],'#real-world-videos');
+  renderMedia(config.simulationVideos || [],'#simulation-videos');
   renderMedia(config.executionVideos,'#execution-videos');
   (config.humanTransferVideos || []).forEach(task => {
     const group=make('article','human-task');

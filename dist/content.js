@@ -175,6 +175,72 @@ window.ATOMWPM = {
         "poster": "assets/videos/real-world/05_pull_out_drawer.jpg"
     }
 ],
+  simulationVideos: [
+    {
+        "title": "LIBERO Spatial",
+        "description": "Pick up the black bowl and place it on the plate.",
+        "protocol": "Endpoint input \u00b7 118 frames \u00b7 4 chunks",
+        "src": "assets/videos/simulation/01_libero_spatial.mp4",
+        "poster": "assets/videos/simulation/01_libero_spatial.jpg",
+        "aspectRatio": "1440 / 760"
+    },
+    {
+        "title": "LIBERO Object",
+        "description": "Pick up the butter and place it in the basket.",
+        "protocol": "Endpoint input \u00b7 135 frames \u00b7 5 chunks",
+        "src": "assets/videos/simulation/02_libero_object.mp4",
+        "poster": "assets/videos/simulation/02_libero_object.jpg",
+        "aspectRatio": "1440 / 760"
+    },
+    {
+        "title": "LIBERO Goal",
+        "description": "Put the wine bottle on top of the cabinet.",
+        "protocol": "Endpoint input \u00b7 248 frames \u00b7 9 chunks",
+        "src": "assets/videos/simulation/03_libero_goal.mp4",
+        "poster": "assets/videos/simulation/03_libero_goal.jpg",
+        "aspectRatio": "1440 / 760"
+    },
+    {
+        "title": "LIBERO Long",
+        "description": "Put the alphabet soup into the basket.",
+        "protocol": "Endpoint input \u00b7 142 frames \u00b7 5 chunks",
+        "src": "assets/videos/simulation/04_libero_long.mp4",
+        "poster": "assets/videos/simulation/04_libero_long.jpg",
+        "aspectRatio": "1440 / 760"
+    },
+    {
+        "title": "RoboTwin 2.0: Adjust bottle",
+        "description": "Take the green bottle and keep it upright.",
+        "protocol": "Endpoint input \u00b7 81 frames \u00b7 3 chunks",
+        "src": "assets/videos/simulation/05_robotwin_adjust_bottle.mp4",
+        "poster": "assets/videos/simulation/05_robotwin_adjust_bottle.jpg",
+        "aspectRatio": "1440 / 760"
+    },
+    {
+        "title": "RoboTwin 2.0: Lift pot",
+        "description": "Lift the pot with both arms, keeping the handles upright.",
+        "protocol": "Endpoint input \u00b7 32 frames \u00b7 2 chunks",
+        "src": "assets/videos/simulation/06_robotwin_lift_pot.mp4",
+        "poster": "assets/videos/simulation/06_robotwin_lift_pot.jpg",
+        "aspectRatio": "1440 / 760"
+    },
+    {
+        "title": "RoboTwin 2.0: Place can in basket",
+        "description": "Place the selected can into the brown basket.",
+        "protocol": "Endpoint input \u00b7 187 frames \u00b7 7 chunks",
+        "src": "assets/videos/simulation/07_robotwin_place_can_basket.mp4",
+        "poster": "assets/videos/simulation/07_robotwin_place_can_basket.jpg",
+        "aspectRatio": "1440 / 760"
+    },
+    {
+        "title": "RoboTwin 2.0: Place can in box",
+        "description": "Place the selected red can inside the plastic box.",
+        "protocol": "Endpoint input \u00b7 192 frames \u00b7 7 chunks",
+        "src": "assets/videos/simulation/08_robotwin_place_cans_plasticbox.mp4",
+        "poster": "assets/videos/simulation/08_robotwin_place_cans_plasticbox.jpg",
+        "aspectRatio": "1440 / 760"
+    }
+],
   /* Draft citation: replace with the final public paper metadata at release. */
   bibtex: `@misc{atomwpm,
   title = {AtomWPM: Fast 4D Prediction from Pretrained Video Representations},
