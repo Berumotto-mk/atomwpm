@@ -12,28 +12,32 @@ window.ATOMWPM = {
         "title": "Pick and place",
         "description": "AtomWPM-predicted point trajectories for placing the cup.",
         "protocol": "AtomWPM prediction",
-        "src": "assets/videos/pick-place-prediction.mp4",
+        "src": "assets/videos/pick-place-prediction-aligned.mp4",
+        "playbackNote": "2.50× playback; matched to robot execution.",
         "poster": "assets/videos/pick-place-prediction.jpg"
     },
     {
         "title": "Fold the paper bag",
         "description": "AtomWPM-predicted point trajectories for folding the paper bag.",
         "protocol": "AtomWPM prediction",
-        "src": "assets/videos/fold-bag-prediction.mp4",
+        "src": "assets/videos/fold-bag-prediction-aligned.mp4",
+        "playbackNote": "2.73× playback; matched to robot execution.",
         "poster": "assets/videos/fold-bag-prediction.jpg"
     },
     {
         "title": "Wipe the table",
         "description": "AtomWPM-predicted point trajectories for wiping the table.",
         "protocol": "AtomWPM prediction",
-        "src": "assets/videos/wipe-table-prediction.mp4",
+        "src": "assets/videos/wipe-table-prediction-aligned.mp4",
+        "playbackNote": "1.25× playback; matched to robot execution.",
         "poster": "assets/videos/wipe-table-prediction.jpg"
     },
     {
         "title": "Open the drawer",
         "description": "AtomWPM-predicted point trajectories for opening the drawer.",
         "protocol": "AtomWPM prediction",
-        "src": "assets/videos/open-drawer-prediction.mp4",
+        "src": "assets/videos/open-drawer-prediction-aligned.mp4",
+        "playbackNote": "1.30× playback; matched to robot execution.",
         "poster": "assets/videos/open-drawer-prediction.jpg"
     }
 ],
