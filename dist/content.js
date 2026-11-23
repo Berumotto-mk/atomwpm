@@ -225,19 +225,11 @@ window.ATOMWPM = {
         "aspectRatio": "1440 / 760"
     },
     {
-        "title": "RoboTwin 2.0: Place can in basket",
-        "description": "Place the selected can into the brown basket.",
-        "protocol": "Endpoint input \u00b7 187 frames \u00b7 7 chunks",
-        "src": "assets/videos/simulation/07_robotwin_place_can_basket.mp4",
-        "poster": "assets/videos/simulation/07_robotwin_place_can_basket.jpg",
-        "aspectRatio": "1440 / 760"
-    },
-    {
         "title": "RoboTwin 2.0: Place can in box",
-        "description": "Place the selected red can inside the plastic box.",
-        "protocol": "Endpoint input \u00b7 192 frames \u00b7 7 chunks",
-        "src": "assets/videos/simulation/08_robotwin_place_cans_plasticbox.mp4",
-        "poster": "assets/videos/simulation/08_robotwin_place_cans_plasticbox.jpg",
+        "description": "Place the selected red can inside the plastic box. Shown through 0:05.",
+        "protocol": "Endpoint input \u00b7 first 5 seconds",
+        "src": "assets/videos/simulation/08_robotwin_place_cans_plasticbox.mp4?v=5s",
+        "poster": "assets/videos/simulation/08_robotwin_place_cans_plasticbox.jpg?v=5s",
         "aspectRatio": "1440 / 760"
     }
 ],

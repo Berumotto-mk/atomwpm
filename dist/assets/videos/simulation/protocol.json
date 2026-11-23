@@ -1,7 +1,7 @@
 {
   "created_utc": "2026-11-23T09:24:07Z",
   "inference": "Fresh BF16 AtomWPM H3/F30 inference, 10 denoising steps; observations refreshed and actual endpoint XYZ supplied per chunk; no cached predictions reused. Endpoint agreement is enforced and is not an endpoint prediction accuracy metric.",
-  "display": "Same eight point identities across the selected contiguous object manipulation segment; raw 3D predictions projected with calibrated initial camera; no smoothing or interpolation; geometric masks are not visibility estimates; chunk boundaries marked.",
+  "display": "Same eight point identities across the selected contiguous object manipulation segment; raw 3D predictions projected with calibrated initial camera; no smoothing or interpolation; geometric masks are not visibility estimates; chunk boundaries marked. Can-in-box is trimmed to the first five playback seconds; original inference ranges remain recorded below.",
   "selection": "Same eight episodes and object identities as the existing paper figure; qualitative cases, not an aggregate evaluation.",
   "timing": "LIBERO 1x source speed; RoboTwin 0.4x source speed for readability.",
   "videos": [
@@ -286,55 +286,6 @@
       }
     },
     {
-      "key": "robotwin_2",
-      "title": "RoboTwin 2.0 / Place can in basket",
-      "video": "07_robotwin_place_can_basket.mp4",
-      "poster": "07_robotwin_place_can_basket.jpg",
-      "episode_id": "place_can_basket__randoms__episode_014023",
-      "object": "can",
-      "point_ids": [
-        32,
-        33,
-        34,
-        35,
-        36,
-        37,
-        38,
-        39
-      ],
-      "start_frame": 56,
-      "end_frame": 242,
-      "source_frames": 187,
-      "chunks": 7,
-      "source_fps": 50.0,
-      "playback_fps": 20,
-      "num_inference_steps": 10,
-      "endpoint_input": true,
-      "observation_refreshed_per_chunk": true,
-      "checkpoint": "atomwpm_robotwin_goal_full10ep_20261114/checkpoint-00020810",
-      "sha256": "0c18908f2532868ac508da1a32095eace08a95b8faaea51812a76043ed8bc8fd",
-      "inference_seeds": [
-        1331,
-        1332,
-        1333,
-        1334,
-        1335,
-        1336,
-        1337
-      ],
-      "validation": {
-        "key": "robotwin_2",
-        "episode_id": "place_can_basket__randoms__episode_014023",
-        "object_name": "can",
-        "start_frame": 56,
-        "end_frame": 242,
-        "chunks": 7,
-        "predicted_frames": 186,
-        "max_endpoint_error_m": 2.9610738749852317e-08,
-        "raw_prediction_coverage": 1.0
-      }
-    },
-    {
       "key": "robotwin_3",
       "title": "RoboTwin 2.0 / Place can in box",
       "video": "08_robotwin_place_cans_plasticbox.mp4",
@@ -361,7 +312,7 @@
       "endpoint_input": true,
       "observation_refreshed_per_chunk": true,
       "checkpoint": "atomwpm_robotwin_goal_full10ep_20261114/checkpoint-00020810",
-      "sha256": "934a6730f25dcb3875d638251d39d086b00b9491e22f4247deeb4699c1a3bf7c",
+      "sha256": "3f6eda770f8f58128a618a6f1610923469486356db3577fb61bfd5de0da5c2e0",
       "inference_seeds": [
         1448,
         1449,
@@ -381,6 +332,11 @@
         "predicted_frames": 191,
         "max_endpoint_error_m": 2.8076760472117712e-08,
         "raw_prediction_coverage": 1.0
+      },
+      "display_excerpt": {
+        "start_seconds": 0,
+        "end_seconds": 5,
+        "display_frames": 100
       }
     }
   ]
