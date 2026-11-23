@@ -8,13 +8,65 @@ window.ATOMWPM = {
   ],
   heroVideo: '',
   predictionVideos: [
-    { title: 'Real-world trajectory prediction', description: 'Object motion across manipulation tasks.', protocol: '', src: '', poster: '' },
-    { title: 'LIBERO & RoboTwin 2.0', description: 'Forecasting in simulated manipulation environments.', protocol: '', src: '', poster: '' }
-  ],
+    {
+        "title": "Pick and place",
+        "description": "AtomWPM-predicted point trajectories for placing the cup.",
+        "protocol": "AtomWPM prediction",
+        "src": "assets/videos/pick-place-prediction.mp4",
+        "poster": "assets/videos/pick-place-prediction.jpg"
+    },
+    {
+        "title": "Fold the paper bag",
+        "description": "AtomWPM-predicted point trajectories for folding the paper bag.",
+        "protocol": "AtomWPM prediction",
+        "src": "assets/videos/fold-bag-prediction.mp4",
+        "poster": "assets/videos/fold-bag-prediction.jpg"
+    },
+    {
+        "title": "Wipe the table",
+        "description": "AtomWPM-predicted point trajectories for wiping the table.",
+        "protocol": "AtomWPM prediction",
+        "src": "assets/videos/wipe-table-prediction.mp4",
+        "poster": "assets/videos/wipe-table-prediction.jpg"
+    },
+    {
+        "title": "Open the drawer",
+        "description": "AtomWPM-predicted point trajectories for opening the drawer.",
+        "protocol": "AtomWPM prediction",
+        "src": "assets/videos/open-drawer-prediction.mp4",
+        "poster": "assets/videos/open-drawer-prediction.jpg"
+    }
+],
   executionVideos: [
-    { title: 'Trajectory-guided robot execution', description: 'Predicted 4D trajectories followed by the action expert.', protocol: '', src: '', poster: '' },
-    { title: 'Human-to-robot transfer', description: 'Human demonstration trajectories used by the action expert.', protocol: '', src: '', poster: '' }
-  ],
+    {
+        "title": "Pick and place",
+        "description": "Robot placing the cup, using AtomWPM trajectories as input to the action decoder.",
+        "protocol": "AtomWPM + action decoder",
+        "src": "assets/videos/pick-place-execution.mp4",
+        "poster": "assets/videos/pick-place-execution.jpg"
+    },
+    {
+        "title": "Fold the paper bag",
+        "description": "Robot folding the paper bag, using AtomWPM trajectories as input to the action decoder.",
+        "protocol": "AtomWPM + action decoder",
+        "src": "assets/videos/fold-bag-execution.mp4",
+        "poster": "assets/videos/fold-bag-execution.jpg"
+    },
+    {
+        "title": "Wipe the table",
+        "description": "Robot wiping the table, using AtomWPM trajectories as input to the action decoder.",
+        "protocol": "AtomWPM + action decoder",
+        "src": "assets/videos/wipe-table-execution.mp4",
+        "poster": "assets/videos/wipe-table-execution.jpg"
+    },
+    {
+        "title": "Open the drawer",
+        "description": "Robot opening the drawer, using AtomWPM trajectories as input to the action decoder.",
+        "protocol": "AtomWPM + action decoder",
+        "src": "assets/videos/open-drawer-execution.mp4",
+        "poster": "assets/videos/open-drawer-execution.jpg"
+    }
+],
   /* Draft citation: replace with the final public paper metadata at release. */
   bibtex: `@misc{atomwpm,
   title = {AtomWPM: Fast 4D Prediction from Pretrained Video Representations},

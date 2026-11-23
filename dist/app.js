@@ -19,7 +19,7 @@
     document.querySelector('#resource-list').append(item);
   });
   const videoNode = item => {
-    const v=make('video');v.src=safeURL(item.src);v.controls=true;v.playsInline=true;v.preload='metadata';v.setAttribute('aria-label',item.title);
+    const v=make('video');v.src=safeURL(item.src);v.controls=true;v.playsInline=true;v.loop=true;v.muted=true;v.preload='metadata';v.setAttribute('aria-label',item.title);
     if(safeURL(item.poster))v.poster=item.poster;
     v.append(make('p','', 'Your browser does not support video playback.'));
     return v;
