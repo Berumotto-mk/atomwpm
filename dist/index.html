@@ -6,14 +6,14 @@
   <meta name="description" content="AtomWPM: Fast 4D Prediction from Pretrained Video Representations. Forecasting metric 3D point trajectories for robot manipulation.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20261123-gallery-clean">
-  <script defer src="content.js?v=20261123-gallery-clean"></script><script defer src="app.js?v=20261123-gallery-clean"></script>
+  <link rel="stylesheet" href="style.css?v=20261123-overview-data">
+  <script defer src="content.js?v=20261123-overview-data"></script><script defer src="app.js?v=20261123-overview-data"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar"><nav class="nav wrap" aria-label="Main navigation">
   <a class="wordmark" href="#">Atom<span>WPM</span></a>
-  <div class="navlinks"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#prediction">4D prediction</a><a href="#execution">Robot execution</a><a href="#human-to-robot">Human-to-robot</a><a href="#results">Results</a><a href="#resources">Resources</a></div>
+  <div class="navlinks"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#data">Data</a><a href="#prediction">4D prediction</a><a href="#execution">Robot execution</a><a href="#human-to-robot">Human-to-robot</a><a href="#results">Results</a><a href="#resources">Resources</a></div>
 </nav></header>
 <main id="main">
 <section class="hero wrap">
@@ -25,7 +25,7 @@
   <div class="affiliations"><span><sup>1</sup> Atombite.ai</span><span><sup>2</sup> Peking University</span><span><sup>3</sup> Beijing Institute of Technology</span></div>
   <div class="resource-buttons" id="hero-resources"></div>
   <p class="hero-summary">Video-learned motion priors. Metric point trajectories.<br>No future-video generation.</p>
-  <figure class="hero-figure"><div id="hero-media"><a href="assets/hero-hd.webp" target="_blank" rel="noopener noreferrer" title="Open full-resolution figure"><img src="assets/hero-hd.webp" width="4000" height="731" alt="Real-world pick-and-place and paper-bag folding examples with input observations, ground-truth trajectories and AtomWPM predictions."></a></div><figcaption>From a short RGB history and language to future 3D motion.<span class="figure-note">Selected static results from the paper · explore rollout videos below</span></figcaption></figure>
+  <figure class="hero-figure"><div id="hero-media"><a href="assets/overview.svg" target="_blank" rel="noopener noreferrer" title="Open full-resolution overview"><img src="assets/overview.svg" width="1600" height="820" alt="AtomWPM overview: RGB history, language and query XYZ condition cached video features and trajectory denoising; predicted metric 3D tracks guide an action expert. Joint video–trajectory training transfers motion priors."></a></div><figcaption>From observations to metric trajectories to robot actions.<span class="figure-note">Video–trajectory learning during training. Cached trajectory forecasting at inference.</span></figcaption></figure>
 </section>
 <section class="section soft" id="abstract"><div class="reading wrap">
   <p class="eyebrow">Overview</p><h2>Predict motion, point by point.</h2>
@@ -39,6 +39,17 @@
   <figure class="method-figure"><a href="assets/method-hd.webp" target="_blank" rel="noopener noreferrer" title="Open full-resolution figure"><img src="assets/method-hd.webp" loading="lazy" alt="AtomWPM architecture showing joint video and trajectory training, structured attention masks, cached inference, and the downstream action expert."></a><figcaption>Joint training, structured attention, cached inference, and the 4D action expert.</figcaption></figure>
   <div class="method-steps"><article><h3>Joint video–trajectory training</h3><p>Future-video supervision and trajectory flow matching transfer video-learned motion representations to point prediction.</p></article><article><h3>Structured attention</h3><p>Trajectory tokens read observed-frame features. Future-video tokens remain masked from trajectory prediction.</p></article><article><h3>Trajectory-only inference</h3><p>Cache observed-frame keys and values once, then jointly denoise the point–time tokens into future metric positions.</p></article></div>
 </section>
+<section class="section soft" id="data"><div class="wrap">
+  <div class="section-heading"><p class="eyebrow">Data</p><h2>Atom4dData.<br>Motion across worlds.</h2><p>RGB observations and language instructions paired with metric 3D trajectories of points on manipulated objects, across real-world and simulated manipulation.</p></div>
+  <div class="data-cards">
+    <article><p class="data-domain">REAL WORLD</p><h3>Real manipulation</h3><strong class="data-scale">1,156 <span>clips</span></strong><p>Five tasks: cup pick-and-place, paper-bag folding, sponge wiping and return, cup pouring and return, and pot-drawer pulling.</p><p class="data-labels">SAM3 + surface-point sampling<br>SpatialTrackerV2 + depth</p></article>
+    <article><p class="data-domain">SIMULATION</p><h3>LIBERO</h3><strong class="data-scale">2,400 <span>episodes</span></strong><p>Spatial, Object, Goal, and Long suites, retaining the original task definitions and object-attached surface points.</p><p class="data-labels">2,000 training / 400 held-out episodes<br>Simulator-state 3D trajectories</p></article>
+    <article><p class="data-domain">SIMULATION</p><h3>RoboTwin 2.0</h3><strong class="data-scale">47 <span>retained tasks</span></strong><p>Clean training episodes and domain-randomized held-out episodes, with points sampled on manipulated-object meshes.</p><p class="data-labels">2,350 training / 470 held-out episodes<br>Simulator-state 3D trajectories</p></article>
+  </div>
+  <div class="data-format" aria-label="Trajectory data format"><div><strong>RGB + language</strong><span>Observations and task instruction</span></div><div><strong>8 query points</strong><span>Fixed identities within each window</span></div><div><strong>H3 / F30</strong><span>3 history frames; up to 30 future frames</span></div><div><strong>Metric XYZ + masks</strong><span>3D tracks, timestamps, and validity</span></div></div>
+  <div class="data-details"><article><h3>Simulation forecasting windows</h3><p>Episodes are divided into forecasting windows. Each window retains its query identities and supervision masks; short tails are kept.</p><div class="table-scroll"><table class="data-table"><caption class="sr-only">Simulation forecasting windows reported in the paper</caption><thead><tr><th scope="col">Source</th><th scope="col">Training pool</th><th scope="col">Held-out test</th></tr></thead><tbody><tr><th scope="row">LIBERO</th><td>12,243 windows</td><td>2,220 windows</td></tr><tr><th scope="row">RoboTwin 2.0</th><td>16,645 windows</td><td>3,212 windows</td></tr><tr class="ours"><th scope="row">Total</th><td>28,888 windows</td><td>5,432 windows</td></tr></tbody></table></div></article><article><h3>Atom4dbench</h3><p>Forecasting evaluation spans the four LIBERO suites, domain-randomized RoboTwin episodes, and real manipulation. Real-data robustness settings vary object position, occlusion, texture, object color, and table color.</p><p>Comparisons share query identities, timestamps, coordinate frames, and validity masks. Endpoint-conditioned variants additionally receive target XYZ.</p><p class="protocol">Real 3D labels are estimated from tracking and depth. Simulation labels are derived from simulator states. These are distinct label sources.</p></article></div>
+  <p class="protocol">Source: current manuscript, Section 4 and Appendix A. Simulation counts describe the training pool before model-specific validation selection; clips, episodes, and windows are different units. The real format contains 3 history + 30 future frames. Dataset download links will be added when released.</p>
+</div></section>
 <section class="section soft" id="prediction"><div class="wrap">
   <div class="section-heading"><p class="eyebrow">4D prediction</p><h2>One representation.<br>Diverse object motion.</h2><p>Explore real-world manipulation and simulation results, from rigid motion to articulated objects and deformable paper bags.</p></div>
   <div class="tabs" role="tablist" aria-label="Prediction domain"><button role="tab" id="tab-real" aria-controls="panel-real" aria-selected="true" data-panel="real">Real world</button><button role="tab" id="tab-simulation" aria-controls="panel-simulation" aria-selected="false" tabindex="-1" data-panel="simulation">Simulation</button></div>
