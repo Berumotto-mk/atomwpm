@@ -193,14 +193,6 @@ window.ATOMWPM = {
         "aspectRatio": "1440 / 760"
     },
     {
-        "title": "LIBERO Goal",
-        "description": "Put the wine bottle on top of the cabinet.",
-        "protocol": "Endpoint input \u00b7 248 frames \u00b7 9 chunks",
-        "src": "assets/videos/simulation/03_libero_goal.mp4",
-        "poster": "assets/videos/simulation/03_libero_goal.jpg",
-        "aspectRatio": "1440 / 760"
-    },
-    {
         "title": "LIBERO Long",
         "description": "Put the alphabet soup into the basket.",
         "protocol": "Endpoint input \u00b7 142 frames \u00b7 5 chunks",

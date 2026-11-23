@@ -2,7 +2,7 @@
   "created_utc": "2026-11-23T09:24:07Z",
   "inference": "Fresh BF16 AtomWPM H3/F30 inference, 10 denoising steps; observations refreshed and actual endpoint XYZ supplied per chunk; no cached predictions reused. Endpoint agreement is enforced and is not an endpoint prediction accuracy metric.",
   "display": "Same eight point identities across the selected contiguous object manipulation segment; raw 3D predictions projected with calibrated initial camera; no smoothing or interpolation; geometric masks are not visibility estimates; chunk boundaries marked. Can-in-box is trimmed to the first five playback seconds; original inference ranges remain recorded below.",
-  "selection": "Same eight episodes and object identities as the existing paper figure; qualitative cases, not an aggregate evaluation.",
+  "selection": "Six displayed qualitative cases selected from the original paper figure episodes; not an aggregate evaluation.",
   "timing": "LIBERO 1x source speed; RoboTwin 0.4x source speed for readability.",
   "videos": [
     {
@@ -95,57 +95,6 @@
         "chunks": 5,
         "predicted_frames": 134,
         "max_endpoint_error_m": 5.935613023311248e-08,
-        "raw_prediction_coverage": 1.0
-      }
-    },
-    {
-      "key": "libero_2",
-      "title": "LIBERO Goal",
-      "video": "03_libero_goal.mp4",
-      "poster": "03_libero_goal.jpg",
-      "episode_id": "test:libero_goal:2:2",
-      "object": "wine_bottle_1",
-      "point_ids": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7
-      ],
-      "start_frame": 2,
-      "end_frame": 249,
-      "source_frames": 248,
-      "chunks": 9,
-      "source_fps": 20.0,
-      "playback_fps": 20,
-      "num_inference_steps": 10,
-      "endpoint_input": true,
-      "observation_refreshed_per_chunk": true,
-      "checkpoint": "atomwpm_libero_h3_f30_goal_20261111/checkpoint-00020000",
-      "sha256": "72f7c26c69bad880f1205f21c4bf11c57eb3403dc4988a2b3eb56d7cadee8fde",
-      "inference_seeds": [
-        1399,
-        1400,
-        1401,
-        1402,
-        1403,
-        1404,
-        1405,
-        1406,
-        1407
-      ],
-      "validation": {
-        "key": "libero_2",
-        "episode_id": "test:libero_goal:2:2",
-        "object_name": "wine_bottle_1",
-        "start_frame": 2,
-        "end_frame": 249,
-        "chunks": 9,
-        "predicted_frames": 247,
-        "max_endpoint_error_m": 5.4475714827972865e-08,
         "raw_prediction_coverage": 1.0
       }
     },
