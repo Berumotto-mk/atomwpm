@@ -36,41 +36,7 @@
     if(item.protocol)copy.append(make('span','media-tag',item.protocol));card.append(copy);document.querySelector(target).append(card);
   });
   renderMedia(config.realWorldVideos || [],'#real-world-videos');
-  config.predictionVideos.forEach(prediction => {
-    const execution=config.executionVideos.find(item=>item.title===prediction.title);
-    if(!execution) return;
-    const group=make('article','human-task');
-    group.append(make('h3','human-task-title',prediction.title));
-    const grid=make('div','media-grid');
-    const pairVideos=[];
-    for(const [item,label,description] of [
-      [prediction,'Predicted trajectories','Point trajectories predicted by AtomWPM.'],
-      [execution,'Robot execution','Action decoder conditioned on the AtomWPM-predicted trajectories.']
-    ]) {
-      const card=make('div','media-card');
-      const copy=make('div','media-copy');
-      copy.append(make('h3','',label),make('p','',description));
-      if(item.playbackNote) copy.append(make('p','media-playback-note',item.playbackNote));
-      const video=videoNode({...item,title:prediction.title+' — '+label});
-      pairVideos.push(video);
-      card.append(copy,video);
-      grid.append(card);
-    }
-    const playPair=make('button','play-pair','Play pair');
-    playPair.type='button';
-    playPair.setAttribute('aria-label','Play both videos: '+prediction.title);
-    const pairStatus=make('span','pair-status');
-    pairStatus.setAttribute('role','status');
-    playPair.addEventListener('click',async()=>{
-      pairVideos.forEach(video=>{video.pause();video.currentTime=0;});
-      try {await Promise.all(pairVideos.map(video=>video.play()));pairStatus.textContent='Playing both videos.';}
-      catch {pairStatus.textContent='Use each video’s play control to start playback.';}
-    });
-    const pairControls=make('div','pair-controls');
-    pairControls.append(playPair,pairStatus);
-    group.append(pairControls,grid);
-    document.querySelector('#execution-videos').append(group);
-  });
+  renderMedia(config.executionVideos,'#execution-videos');
   (config.humanTransferVideos || []).forEach(task => {
     const group=make('article','human-task');
     group.append(make('h3','human-task-title',task.title));
