@@ -1,0 +1,17 @@
+Method,Variant,Tuned,Endpoint,LIBERO_ADE_cm,LIBERO_FDE_cm,RoboTwin_ADE_cm,RoboTwin_FDE_cm,Real_Position_ADE_cm,Real_Position_FDE_cm
+Static,No endpoint,False,False,4.950,8.91975,5.101,8.597,15.305,16.883
+Constant velocity,No endpoint,False,False,3.72125,8.69975,6.184,11.818,41.565,81.790
+MolmoMotion AR,Released / no endpoint,False,False,5.951,8.88175,6.277,10.604,24.358,35.406
+MolmoMotion AR,Tuned / endpoint,True,True,1.54825,2.01475,2.360,3.485,3.316,0.746
+MolmoMotion AR + VFlash,Tuned / endpoint,True,True,1.799,3.15225,2.383,3.126,4.380,1.421
+MotionForesight,Released / no endpoint,False,False,8.0305,11.31525,8.393,11.188,17.557,19.430
+MotionForesight,Tuned / no endpoint,True,False,4.901,6.40475,7.249,9.519,12.048,13.405
+MotionForesight,Tuned / endpoint,True,True,8.248,10.8345,6.877,8.761,10.102,10.200
+ObjectForesight,Released / no endpoint,False,False,6.6325,10.2265,6.619,9.831,15.680,17.335
+ObjectForesight,Tuned / no endpoint,True,False,2.9875,6.009,5.081,8.485,11.516,12.829
+ObjectForesight,Tuned / endpoint,True,True,2.11175,3.72875,3.226,4.291,6.890,4.244
+VPM,Released / no endpoint,False,False,55.24475,55.740,35.258,36.182,38.267,42.462
+VPM,Tuned / no endpoint,True,False,52.28925,52.3055,34.006,34.617,38.744,42.996
+VPM,Tuned / endpoint,True,True,49.2635,50.1045,34.373,36.343,32.376,36.328
+AtomWPM,H3F30 / 4 steps,True,True,1.727,0.46375,2.430,0.488,3.731,1.230
+AtomWPM,Legacy hard / 10 steps,True,True,1.54275,1.87275,2.251,1.465,,

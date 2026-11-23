@@ -1,0 +1,663 @@
+{
+  "source": "Current compiled Overleaf manuscript, Tables 1, 2 and 4",
+  "checked_date": "2026-11-23",
+  "pdf_sha256": "936a3d908a5edc09b386130af9766f0d29120d2c87b9cd691ec8484bc1cbe1a4",
+  "units": {
+    "ADE": "cm",
+    "FDE": "cm",
+    "latency": "s"
+  },
+  "aggregation": "LIBERO = equal arithmetic mean of Spatial, Object, Goal, Long, computed separately for ADE and FDE from the three-decimal table values; not pooled-window aggregation.",
+  "real_condition": "Table 2 Position only",
+  "default_view": "Post-trained, endpoint-conditioned methods reported in both Tables 1 and 2; legacy variant appears in All variants.",
+  "fde_definition": "Penultimate future frame, as defined in the manuscript; not the supplied endpoint.",
+  "rows": [
+    {
+      "method": "Static",
+      "variant": "No endpoint",
+      "tuned": false,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "4.863",
+          "9.136"
+        ],
+        "Object": [
+          "7.164",
+          "12.275"
+        ],
+        "Goal": [
+          "3.786",
+          "7.436"
+        ],
+        "Long": [
+          "3.987",
+          "6.832"
+        ]
+      },
+      "libero": [
+        "4.950",
+        "8.91975"
+      ],
+      "robotwin": [
+        "5.101",
+        "8.597"
+      ],
+      "real_position": [
+        "15.305",
+        "16.883"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "Constant velocity",
+      "variant": "No endpoint",
+      "tuned": false,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "4.273",
+          "9.668"
+        ],
+        "Object": [
+          "4.062",
+          "9.985"
+        ],
+        "Goal": [
+          "3.286",
+          "7.971"
+        ],
+        "Long": [
+          "3.264",
+          "7.175"
+        ]
+      },
+      "libero": [
+        "3.72125",
+        "8.69975"
+      ],
+      "robotwin": [
+        "6.184",
+        "11.818"
+      ],
+      "real_position": [
+        "41.565",
+        "81.790"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "MolmoMotion AR",
+      "variant": "Released / no endpoint",
+      "tuned": false,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "5.150",
+          "8.562"
+        ],
+        "Object": [
+          "9.442",
+          "11.596"
+        ],
+        "Goal": [
+          "4.140",
+          "7.735"
+        ],
+        "Long": [
+          "5.072",
+          "7.634"
+        ]
+      },
+      "libero": [
+        "5.951",
+        "8.88175"
+      ],
+      "robotwin": [
+        "6.277",
+        "10.604"
+      ],
+      "real_position": [
+        "24.358",
+        "35.406"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "MolmoMotion AR",
+      "variant": "Tuned / endpoint",
+      "tuned": true,
+      "endpoint": true,
+      "libero_suites": {
+        "Spatial": [
+          "1.907",
+          "2.380"
+        ],
+        "Object": [
+          "1.400",
+          "2.025"
+        ],
+        "Goal": [
+          "1.567",
+          "1.989"
+        ],
+        "Long": [
+          "1.319",
+          "1.665"
+        ]
+      },
+      "libero": [
+        "1.54825",
+        "2.01475"
+      ],
+      "robotwin": [
+        "2.360",
+        "3.485"
+      ],
+      "real_position": [
+        "3.316",
+        "0.746"
+      ],
+      "default_comparison": true
+    },
+    {
+      "method": "MolmoMotion AR + VFlash",
+      "variant": "Tuned / endpoint",
+      "tuned": true,
+      "endpoint": true,
+      "libero_suites": {
+        "Spatial": [
+          "2.319",
+          "3.917"
+        ],
+        "Object": [
+          "1.553",
+          "3.072"
+        ],
+        "Goal": [
+          "1.814",
+          "3.177"
+        ],
+        "Long": [
+          "1.510",
+          "2.443"
+        ]
+      },
+      "libero": [
+        "1.799",
+        "3.15225"
+      ],
+      "robotwin": [
+        "2.383",
+        "3.126"
+      ],
+      "real_position": [
+        "4.380",
+        "1.421"
+      ],
+      "default_comparison": true
+    },
+    {
+      "method": "MotionForesight",
+      "variant": "Released / no endpoint",
+      "tuned": false,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "6.571",
+          "10.104"
+        ],
+        "Object": [
+          "10.989",
+          "15.154"
+        ],
+        "Goal": [
+          "7.417",
+          "10.366"
+        ],
+        "Long": [
+          "7.145",
+          "9.637"
+        ]
+      },
+      "libero": [
+        "8.0305",
+        "11.31525"
+      ],
+      "robotwin": [
+        "8.393",
+        "11.188"
+      ],
+      "real_position": [
+        "17.557",
+        "19.430"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "MotionForesight",
+      "variant": "Tuned / no endpoint",
+      "tuned": true,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "3.959",
+          "5.715"
+        ],
+        "Object": [
+          "5.940",
+          "7.160"
+        ],
+        "Goal": [
+          "4.767",
+          "6.564"
+        ],
+        "Long": [
+          "4.938",
+          "6.180"
+        ]
+      },
+      "libero": [
+        "4.901",
+        "6.40475"
+      ],
+      "robotwin": [
+        "7.249",
+        "9.519"
+      ],
+      "real_position": [
+        "12.048",
+        "13.405"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "MotionForesight",
+      "variant": "Tuned / endpoint",
+      "tuned": true,
+      "endpoint": true,
+      "libero_suites": {
+        "Spatial": [
+          "6.931",
+          "10.076"
+        ],
+        "Object": [
+          "11.045",
+          "13.663"
+        ],
+        "Goal": [
+          "7.404",
+          "10.050"
+        ],
+        "Long": [
+          "7.612",
+          "9.549"
+        ]
+      },
+      "libero": [
+        "8.248",
+        "10.8345"
+      ],
+      "robotwin": [
+        "6.877",
+        "8.761"
+      ],
+      "real_position": [
+        "10.102",
+        "10.200"
+      ],
+      "default_comparison": true
+    },
+    {
+      "method": "ObjectForesight",
+      "variant": "Released / no endpoint",
+      "tuned": false,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "6.274",
+          "9.993"
+        ],
+        "Object": [
+          "8.970",
+          "13.660"
+        ],
+        "Goal": [
+          "5.733",
+          "9.019"
+        ],
+        "Long": [
+          "5.553",
+          "8.234"
+        ]
+      },
+      "libero": [
+        "6.6325",
+        "10.2265"
+      ],
+      "robotwin": [
+        "6.619",
+        "9.831"
+      ],
+      "real_position": [
+        "15.680",
+        "17.335"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "ObjectForesight",
+      "variant": "Tuned / no endpoint",
+      "tuned": true,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "3.262",
+          "6.159"
+        ],
+        "Object": [
+          "2.834",
+          "5.928"
+        ],
+        "Goal": [
+          "3.124",
+          "6.684"
+        ],
+        "Long": [
+          "2.730",
+          "5.265"
+        ]
+      },
+      "libero": [
+        "2.9875",
+        "6.009"
+      ],
+      "robotwin": [
+        "5.081",
+        "8.485"
+      ],
+      "real_position": [
+        "11.516",
+        "12.829"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "ObjectForesight",
+      "variant": "Tuned / endpoint",
+      "tuned": true,
+      "endpoint": true,
+      "libero_suites": {
+        "Spatial": [
+          "2.292",
+          "3.795"
+        ],
+        "Object": [
+          "2.134",
+          "3.743"
+        ],
+        "Goal": [
+          "2.255",
+          "4.337"
+        ],
+        "Long": [
+          "1.766",
+          "3.040"
+        ]
+      },
+      "libero": [
+        "2.11175",
+        "3.72875"
+      ],
+      "robotwin": [
+        "3.226",
+        "4.291"
+      ],
+      "real_position": [
+        "6.890",
+        "4.244"
+      ],
+      "default_comparison": true
+    },
+    {
+      "method": "VPM",
+      "variant": "Released / no endpoint",
+      "tuned": false,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "51.441",
+          "52.051"
+        ],
+        "Object": [
+          "66.689",
+          "67.532"
+        ],
+        "Goal": [
+          "57.572",
+          "57.368"
+        ],
+        "Long": [
+          "45.277",
+          "46.009"
+        ]
+      },
+      "libero": [
+        "55.24475",
+        "55.740"
+      ],
+      "robotwin": [
+        "35.258",
+        "36.182"
+      ],
+      "real_position": [
+        "38.267",
+        "42.462"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "VPM",
+      "variant": "Tuned / no endpoint",
+      "tuned": true,
+      "endpoint": false,
+      "libero_suites": {
+        "Spatial": [
+          "47.536",
+          "47.581"
+        ],
+        "Object": [
+          "64.847",
+          "65.390"
+        ],
+        "Goal": [
+          "55.036",
+          "54.052"
+        ],
+        "Long": [
+          "41.738",
+          "42.199"
+        ]
+      },
+      "libero": [
+        "52.28925",
+        "52.3055"
+      ],
+      "robotwin": [
+        "34.006",
+        "34.617"
+      ],
+      "real_position": [
+        "38.744",
+        "42.996"
+      ],
+      "default_comparison": false
+    },
+    {
+      "method": "VPM",
+      "variant": "Tuned / endpoint",
+      "tuned": true,
+      "endpoint": true,
+      "libero_suites": {
+        "Spatial": [
+          "45.903",
+          "47.118"
+        ],
+        "Object": [
+          "60.679",
+          "62.179"
+        ],
+        "Goal": [
+          "51.930",
+          "51.903"
+        ],
+        "Long": [
+          "38.542",
+          "39.218"
+        ]
+      },
+      "libero": [
+        "49.2635",
+        "50.1045"
+      ],
+      "robotwin": [
+        "34.373",
+        "36.343"
+      ],
+      "real_position": [
+        "32.376",
+        "36.328"
+      ],
+      "default_comparison": true
+    },
+    {
+      "method": "AtomWPM",
+      "variant": "H3F30 / 4 steps",
+      "tuned": true,
+      "endpoint": true,
+      "libero_suites": {
+        "Spatial": [
+          "1.940",
+          "0.522"
+        ],
+        "Object": [
+          "1.902",
+          "0.569"
+        ],
+        "Goal": [
+          "1.545",
+          "0.415"
+        ],
+        "Long": [
+          "1.521",
+          "0.349"
+        ]
+      },
+      "libero": [
+        "1.727",
+        "0.46375"
+      ],
+      "robotwin": [
+        "2.430",
+        "0.488"
+      ],
+      "real_position": [
+        "3.731",
+        "1.230"
+      ],
+      "default_comparison": true
+    },
+    {
+      "method": "AtomWPM",
+      "variant": "Legacy hard / 10 steps",
+      "tuned": true,
+      "endpoint": true,
+      "libero_suites": {
+        "Spatial": [
+          "1.847",
+          "2.732"
+        ],
+        "Object": [
+          "1.507",
+          "1.292"
+        ],
+        "Goal": [
+          "1.561",
+          "2.238"
+        ],
+        "Long": [
+          "1.256",
+          "1.229"
+        ]
+      },
+      "libero": [
+        "1.54275",
+        "1.87275"
+      ],
+      "robotwin": [
+        "2.251",
+        "1.465"
+      ],
+      "real_position": null,
+      "default_comparison": false
+    }
+  ],
+  "table4": [
+    [
+      "Denoising steps",
+      "H3 / Wan2.2 / video loss",
+      "4 steps",
+      "3.731",
+      "0.170"
+    ],
+    [
+      "Denoising steps",
+      "H3 / Wan2.2 / video loss",
+      "10 steps",
+      "3.696",
+      "0.318"
+    ],
+    [
+      "History frames",
+      "4 steps / Wan2.2 / video loss",
+      "1 frame",
+      "3.769",
+      "0.144"
+    ],
+    [
+      "History frames",
+      "4 steps / Wan2.2 / video loss",
+      "3 frames",
+      "3.731",
+      "0.170"
+    ],
+    [
+      "Visual backbone",
+      "4 steps / H3 / video loss",
+      "Wan2.2",
+      "3.731",
+      "0.170"
+    ],
+    [
+      "Visual backbone",
+      "4 steps / H3 / video loss",
+      "Molmo2",
+      "4.573",
+      "0.337"
+    ],
+    [
+      "Video loss",
+      "4 steps / H3 / Wan2.2",
+      "With",
+      "3.731",
+      "0.170"
+    ],
+    [
+      "Video loss",
+      "4 steps / H3 / Wan2.2",
+      "Without",
+      "3.836",
+      "0.172"
+    ]
+  ]
+}

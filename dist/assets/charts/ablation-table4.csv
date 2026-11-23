@@ -1,0 +1,9 @@
+Ablation dimension,Held fixed,Category,ADE_cm,Latency_s
+Denoising steps,H3 / Wan2.2 / video loss,4 steps,3.731,0.170
+Denoising steps,H3 / Wan2.2 / video loss,10 steps,3.696,0.318
+History frames,4 steps / Wan2.2 / video loss,1 frame,3.769,0.144
+History frames,4 steps / Wan2.2 / video loss,3 frames,3.731,0.170
+Visual backbone,4 steps / H3 / video loss,Wan2.2,3.731,0.170
+Visual backbone,4 steps / H3 / video loss,Molmo2,4.573,0.337
+Video loss,4 steps / H3 / Wan2.2,With,3.731,0.170
+Video loss,4 steps / H3 / Wan2.2,Without,3.836,0.172
